@@ -8,12 +8,17 @@ namespace LOCADORA.Models
     {
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "ID")]
         public int id { get; set; }
-        [Required]
-        
+
+
+        [Required(ErrorMessage = "Campo ID_CARRO é obrigatório")]
+        [Display(Name = "ID_CARRO")]
         public int id_carro { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Campo Estado é obrigatório")]
+        [Display(Name = "Estado de manutenção")]
         [StringLength(1)]
         public string estado{get; set; }
         

@@ -7,16 +7,22 @@ namespace LOCADORA.Models
     public class Cliente
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "ID")]
         public int id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Campo CPF é obrigatório")]
+        [Display(Name = "CPF")]
+        
         public int cpf { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Campo Nome é obrigatório")]
+        [Display(Name = "Nome")]
         [StringLength(90)]
         public string nome { get; set; }
 
-        [Required]
-  
+        [Required(ErrorMessage = "Campo Telefone é obrigatório")]
+        [Display(Name = "Telefone")]
+
         public int telefone { get; set; }
 
 }
