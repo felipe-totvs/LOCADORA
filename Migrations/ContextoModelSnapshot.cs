@@ -60,16 +60,20 @@ namespace LOCADORA.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<int>("cpf")
-                        .HasColumnType("int");
+                    b.Property<string>("cpf")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
 
                     b.Property<string>("nome")
                         .IsRequired()
                         .HasMaxLength(90)
                         .HasColumnType("nvarchar(90)");
 
-                    b.Property<int>("telefone")
-                        .HasColumnType("int");
+                    b.Property<string>("telefone")
+                        .IsRequired()
+                        .HasMaxLength(14)
+                        .HasColumnType("nvarchar(14)");
 
                     b.HasKey("id");
 
