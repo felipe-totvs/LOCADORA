@@ -10,10 +10,11 @@ namespace LOCADORA.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(Name = "ID")]
         public int id { get; set; }
+
         [Required(ErrorMessage = "Campo CPF é obrigatório")]
         [Display(Name = "CPF")]
-        
-        public int cpf { get; set; }
+        [StringLength(11)]
+        public string cpf { get; set; }
 
         [Required(ErrorMessage = "Campo Nome é obrigatório")]
         [Display(Name = "Nome")]
@@ -22,8 +23,8 @@ namespace LOCADORA.Models
 
         [Required(ErrorMessage = "Campo Telefone é obrigatório")]
         [Display(Name = "Telefone")]
-
-        public int telefone { get; set; }
+        [StringLength(14)]
+        public string telefone { get; set; }
 
 }
 }
