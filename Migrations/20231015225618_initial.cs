@@ -32,9 +32,9 @@ namespace LOCADORA.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    cpf = table.Column<int>(type: "int", nullable: false),
+                    cpf = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
                     nome = table.Column<string>(type: "nvarchar(90)", maxLength: 90, nullable: false),
-                    telefone = table.Column<int>(type: "int", nullable: false)
+                    telefone = table.Column<string>(type: "nvarchar(14)", maxLength: 14, nullable: false)
                 },
                 constraints: table =>
                 {
